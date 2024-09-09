@@ -1,6 +1,3 @@
-<p align="center">
-  <img width="300" height="300" src="/images/kali-linux.svg">
-</p>
 
 # OSCP Cheat Sheet
 
@@ -143,9 +140,9 @@
 		- [CVE-2023-22809: Sudo Bypass](#cve-2023-22809-sudo-bypass)
 		- [CVE-2023-32629, CVE-2023-2640: GameOverlay Ubuntu Kernel Exploit LPE (0-day)](#cve-2023-32629-cve-2023-2640-gameoverlay-ubuntu-kernel-exploit-lpe-0-day)
         		- [CVE-2023-4911: Looney Tunables LPE](#cve-2023-4911-looney-tunables-lpe)
-            		- [CVE-2023-7028: GitLab Account Takeover](#cve-2023-7028-gitlab-account-takeover)
-            		- [CVE-2024-4577: PHP-CGI Argument Injection Vulnerability RCE](#cve-2024-4577-php-cgi-argument-injection-vulnerability-rce)
-          		- [GodPotato LPE](#godpotato-lpe)
+                 		- [CVE-2023-7028: GitLab Account Takeover](#cve-2023-7028-gitlab-account-takeover)
+                 		- [CVE-2024-4577: PHP-CGI Argument Injection Vulnerability RCE](#cve-2024-4577-php-cgi-argument-injection-vulnerability-rce)
+             		- [GodPotato LPE](#godpotato-lpe)
 		- [Juicy Potato LPE](#juicy-potato-lpe)
         		- [JuicyPotatoNG LPE](#juicypotatong-lpe)
 		- [MySQL 4.x/5.0 User-Defined Function (UDF) Dynamic Library (2) LPE](#mysql-4x50-user-defined-function-udf-dynamic-library-2-lpe)
