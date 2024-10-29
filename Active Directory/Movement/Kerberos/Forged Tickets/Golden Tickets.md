@@ -1,6 +1,6 @@
 # Golden Tickets攻撃
 
-`Golden Ticket` とは、Active Directory認証において攻撃者が作成したTGT(Ticket Granting Ticket)を指す。攻撃者は有効期限が長いTGTを作成し正規のドメイン管理者に長期的になりすますことを目的としている。Golden Ticketを悪用する攻撃は Pass-the-Ticket攻撃の一種。
+`Golden Ticket` とは、Active Directory認証において攻撃者が作成したTGT(Ticket Granting Ticket)を指す。攻撃者は有効期限が長いTGTを作成し正規のドメイン管理者に長期的になりすますことを目的としている。Golden Ticketを悪用する攻撃は [Pass-the-Ticket攻撃](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Kerberos/Pass%20The%20Ticket.md)の一種。
 
 ## 攻撃に必要なもの
 

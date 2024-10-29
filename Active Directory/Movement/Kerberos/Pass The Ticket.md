@@ -1,6 +1,6 @@
 # Pass The Ticket
 
-Overpass the hash、Silver ticket、golden ticket 攻撃で偽造したり、取得したチケットを使用してパスワードを使うことなく認証を行うことができる
+`Overpass the hash`、`Silver ticket`、`Golden ticket` 攻撃で偽造したり、取得したチケットを使用してパスワードを使うことなく認証を行うことができる
 
 ## チケットを UNIX <-> Windows に変換する
 
