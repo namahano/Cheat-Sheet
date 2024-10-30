@@ -44,9 +44,9 @@ certify find /vulnerable
 
 ### Access Controls
 
-- ESC4
-- ESC5
-- ESC7
+- [ESC4](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Access%20Controls/ESC4.md)
+- [ESC5](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Access%20Controls/ESC5.md)
+- [ESC7](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Access%20Controls/ESC7.md)
 
 ### Unsigned Endpoints
 
