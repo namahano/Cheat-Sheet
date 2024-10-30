@@ -29,12 +29,9 @@ certify find /vulnerable
 - [ESC1](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Certificate%20Templates/ESC1.md)
 - [ESC2](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Certificate%20Templates/ESC2.md)
 - [ESC3](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Certificate%20Templates/ESC3.md)
-- [ESC13](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Certificate%20Templates/ESC13.md)
-
-### Certificate Mapping
-
 - [ESC9](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Certificate%20Mapping/ESC9.md)
 - [ESC10](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Certificate%20Mapping/ESC10.md)
+- [ESC13](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Certificate%20Templates/ESC13.md)
 - [ESC14](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Certificate%20Mapping/ESC14.md)
 
 ### Certificate Authority
