@@ -33,9 +33,9 @@ certify find /vulnerable
 
 ### Certificate Mapping
 
-- ESC9
-- ESC10
-- ESC14
+- [ESC9](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Certificate%20Mapping/ESC9.md)
+- [ESC10](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Certificate%20Mapping/ESC10.md)
+- [ESC14](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Certificate%20Mapping/ESC14.md)
 
 ### Certificate Authority
 
