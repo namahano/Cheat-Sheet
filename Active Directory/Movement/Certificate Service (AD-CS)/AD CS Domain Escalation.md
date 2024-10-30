@@ -26,10 +26,10 @@ certify find /vulnerable
 
 ### Certificate Templates
 
-- ESC1
-- ESC2
-- ESC3
-- ESC13
+- [ESC1](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Certificate%20Templates/ESC1.md)
+- [ESC2](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Certificate%20Templates/ESC2.md)
+- [ESC3](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Certificate%20Templates/ESC3.md)
+- [ESC13](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Certificate%20Templates/ESC13.md)
 
 ### Certificate Mapping
 
