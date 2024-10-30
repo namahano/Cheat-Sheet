@@ -16,7 +16,7 @@ certipy-ad find -dc-ip <DC_IP> -u "<USERNAME>@<DOMAIN>" -p "<PASSWORD>" -ns <DNS
 Certify.exe find /vulnerable
 ```
 
-#### Sliver C2
+### Sliver C2
 
 ```
 certify find /vulnerable
