@@ -50,5 +50,5 @@ certify find /vulnerable
 
 ### Unsigned Endpoints
 
-- ESC8
-- ESC11
+- [ESC8](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Unsigned%20Endpoints/ESC8.md)
+- [ESC11](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Unsigned%20Endpoints/ESC11.md)
