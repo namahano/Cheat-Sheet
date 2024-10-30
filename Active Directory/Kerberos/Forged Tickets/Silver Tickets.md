@@ -1,6 +1,6 @@
 # Silver Tickets攻撃
 
-`Silver Ticket攻撃`は、Active Directory (AD) 環境におけるサービスチケットの悪用を含む。この手法は、`サービスアカウントのNTLMハッシュを取得すること`に依存し、コンピュータアカウントなどのチケットを偽造するために使用される。この偽造されたチケットを使用することで、攻撃者はネットワーク上の特定のサービスにアクセスでき、任意のユーザーに偽装することができる([Pass The Ticket攻撃](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Kerberos/Pass%20The%20Ticket.md))。
+`Silver Ticket攻撃`は、Active Directory (AD) 環境におけるサービスチケットの悪用を含む。この手法は、`サービスアカウントのNTLMハッシュを取得すること`に依存し、コンピュータアカウントなどのチケットを偽造するために使用される。この偽造されたチケットを使用することで、攻撃者はネットワーク上の特定のサービスにアクセスでき、任意のユーザーに偽装することができる([Pass The Ticket攻撃](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Kerberos/Pass%20The%20Ticket.md))。
 
 ## 攻撃に必要なもの
 
