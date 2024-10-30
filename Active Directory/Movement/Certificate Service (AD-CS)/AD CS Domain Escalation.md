@@ -39,8 +39,8 @@ certify find /vulnerable
 
 ### Certificate Authority
 
-- ESC6
-- ESC12
+- [ESC6](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Certificate%20Authority/ESC6.md)
+- [ESC12](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Movement/Certificate%20Service%20(AD-CS)/Certificate%20Authority/ESC12.md)
 
 ### Access Controls
 
