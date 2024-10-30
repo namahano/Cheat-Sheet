@@ -24,31 +24,31 @@ certify find /vulnerable
 
 ## AD CS Vulnerable
 
-### Certificate templates
+### Certificate Templates
 
 - ESC1
 - ESC2
 - ESC3
 - ESC13
 
-### Certificate mapping
+### Certificate Mapping
 
 - ESC9
 - ESC10
 - ESC14
 
-### Certificate authority
+### Certificate Authority
 
 - ESC6
 - ESC12
 
-### Access controls
+### Access Controls
 
 - ESC4
 - ESC5
 - ESC7
 
-### Unsigned endpoints
+### Unsigned Endpoints
 
 - ESC8
 - ESC11
