@@ -23,8 +23,9 @@ ESC7攻撃を行うには、次の要件を満たす必要がある
   - SubCA 証明書テンプレートは ESC1 に対して脆弱だが、テンプレートに登録できるのは管理者のみ
   - ユーザーはSubCA に証明書を要求できる。この要求は最初は拒否されるが、マネージャーが承認して証明書を発行することができる
 
+すべてのtamplateを表示する
+
 ```
-# すべてのtamplateを表示する
 certipy-ad ca -u <USERNAME>@<DOMAIN> -p "<PASSWORD>" -dc-ip <DC_IP> -ca <CA_NAME> -list-templates
 ```
 
