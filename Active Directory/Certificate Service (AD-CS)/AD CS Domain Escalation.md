@@ -13,7 +13,11 @@ certipy-ad find -dc-ip <DC_IP> -u "<USERNAME>@<DOMAIN>" -p "<PASSWORD>" -ns <DNS
 ### Windows
 
 ```
+# デフォルトの低権限グループから脆弱な証明書テンプレートを見つける
 Certify.exe find /vulnerable
+
+# 現在のユーザーコンテキストが属するすべてのグループを使用して脆弱な証明書テンプレートを見つける
+Certify.exe find /vulnerable /currentuser
 ```
 
 ### Sliver C2
