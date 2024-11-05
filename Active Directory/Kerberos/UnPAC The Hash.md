@@ -12,7 +12,7 @@ NTLM 鍵は、U2U による TGS-REQ と S4U2self (これは KDC に対するサ�
 
 ### Linux
 
-PKINIT 事前認証を検証して TGT を取得
+[PKINITtools (Python)](https://github.com/dirkjanm/PKINITtools) で、まずPKINIT 事前認証を検証してTGT を取得
 
 ```
 gettgtpkinit.py -cert-pfx <PATH_TO_CERTIFICATE> -pfx-pass <CERTIFICATE_PASSWORD> <DOMAIN>/<TargetUser> <TGT_CCACHE_FILE>
